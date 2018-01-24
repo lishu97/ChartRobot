@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    flex-shrink: 0;
+    flex-grow: 0;
+    background: #3e3e3e;
+    color: #f0f0f0;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section#record {
+    flex-shrink: 1;
+    flex-grow: 1;
+    width: 100%;
+    background: #eee;
+    box-sizing: border-box;
+    padding: 0 8px 11px;
+    overflow: auto;
+    font-size: 22px;
+    a{
+        text-decoration: none;
+        color: black;
+        &:link{
+            color: black;
+        }
+        &:visited{
+            color: black;
+        }
+        &:hover{
+            color: black;
+        }
+        &:active{
+            color: black;
+        }
+        dl{
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            dt{
+                float: left;
+                width: 37%;
+                height: 100%;
+                background-position: center center;
+                background-size: 100% 100%;
+            }
+            dd{
+                height: 100%;
+                padding-left: 5%;
+                box-sizing: border-box;
+                width: 63%;
+                float: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+footer{
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 57px;
+    width: 100%;
+    padding: 7px;
+    ul {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        
+        // 文本不能被选中
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        li {
+            height: 57px;
+            list-style: none;
+            display: flex;
+            &:nth-of-type(1),
+            &:nth-of-type(3) {
+                flex-shrink: 0;
+                flex-grow: 0;
+                // TODO:修改其为上下居中，替换下一条语句。
+                line-height: 170%;
+                height: 44px;
+                width: 44px;
+                font-size: 26px;
+                color: #3E3E3E;
+                display: flex;
+                justify-content: center;
+                &:active {
+                    color: #999;
+                }
+            }
+            &:nth-of-type(2) {
+                flex-shrink: 1;
+                flex-grow: 1;
+                height: 44px;
+                position: relative;
+                #input {
+                    width: 100%;
+                    height: 44px;
+                    background: #fff;
+                    font-size: 22px;
+                    color: #999;
+                    padding: 5px;
+                    padding-right: 30px;
+                    outline: none;
+                    overflow:auto; 
+                    border: none;
+                    border-bottom: 1px solid #999;
+                    &:focus {
+                        background: #fff;
+                    }
+                }
+                .button {
+                    line-height: 200%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 8px;
+                    margin: auto;
+                    color: #999;
+                    font-size: 22px;
+                    display: none;
+                }
+            }
+            
+        }
+    }
+}
+
+
