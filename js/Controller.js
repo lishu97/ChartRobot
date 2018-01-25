@@ -23,14 +23,14 @@ class Controller {
   init() {
     // 点击发送数据
     $(this.sendBt).on('click', (e) => {
-      var content = $(this.inputBox).val()
+      var content = String($(this.inputBox).val()).trim()
       if(content) {
         this.msg(e, this, content)
       }
     })
     // 回车发送数据
     $(this.inputBox).on('keydown', (e) => {
-      var content = $(this.inputBox).val()
+      var content = String($(this.inputBox).val()).trim()
       if(e.key === 'Enter' && content) {
         this.msg(e, this, content)
       }
@@ -39,21 +39,6 @@ class Controller {
     $(this.change).on('mouseup', () => {
       alert('功能开发中，敬请期待！  :)')
     })
-    /*// 显示清空按钮
-    $(this.inputBox).on('keyup', () => {
-      console.log($(this.inputBox).val())
-      if($(this.inputBox).val()) {
-        $(this.clearBt).show()
-      }
-    });
-    // 隐藏清空按钮
-    $(this.inputBox).on('blur', () => {
-      $(this.clearBt).hide()
-    });
-    // 清空输入框
-    $(this.clearBt).on('click', () => {
-      $(this.inputBox).val('')
-    })*/
     // 解决软键盘挡住输入框的问题
     window.onresize = function () {
       if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
@@ -63,11 +48,16 @@ class Controller {
         }, 0);
       }
     }
-    
+    setTimeout(() => {
+      const robot = new Robot()
+      const user = new User()
+    }, 1000)
   }
   msg(e, that, content) {
     const robot = new Robot()
-      // api接口地址
+    const user = new User()
+    user.send()
+    // api接口地址
     var url = 'http://route.showapi.com/60-27?' +
       // 易源数据 -> 个人中心 -> 我的接口 -> 我是接口使用者 -> 我的应用 -> appid
       'showapi_appid=' + that.showapi_appid +

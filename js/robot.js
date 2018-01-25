@@ -14,9 +14,15 @@ class Robot {
     }
     this.recordBox = recordBox
     this.listNum = listNum
-    // TODO:输出问候信息
-//  let data = {}
-//  this.showResponse(data)
+    // 初始化输出问候
+    let data = {
+      "showapi_res_code":0,
+      "showapi_res_body":{
+        "text":"你好呀~",
+      }
+    }
+    this.showResponse(data)
+    
     __instance(this)
   }
   showResponse(data) {
@@ -30,7 +36,6 @@ class Robot {
         for(let i = 0; i < this.listNum; i++) {
           let temp = data.showapi_res_body.list[i]
           let info = temp.info.split(' ')
-          console.log(info)
           list += `
             <li>
               <a href=${temp.detailurl}>
@@ -38,7 +43,8 @@ class Robot {
                   <dt style=${'"background-image: url(' + temp.icon + ')"'}></dt>
                   <dd>
                     <h4>${temp.name}</h4>
-                    <p><span>${info[0]}</span><span>${info[1]}</span></p>
+                    <p>${info[0]}</p>
+                    <p>${info[1]}</p>
                   </dd>
                 </dl>
               </a>
@@ -49,11 +55,11 @@ class Robot {
       }
       // 如果有文本以外的超链接内容
       if(data.showapi_res_body.url) {
-        url += `<a href = ${data.showapi_res_body.url} class = "url"></a>`
+        url += `<br /><a href = ${data.showapi_res_body.url} class = "url"></a>`
       }
       // 显示返回文本内容
       const res = `
-        <div class = ".robot">
+        <div class = "robot dialog">
           ${data.showapi_res_body.text}
           ${url}
           ${list}
@@ -64,6 +70,7 @@ class Robot {
       if(data.showapi_res_body.url) {
         $('.url').text('查看结果')
       }
+      $(this.recordBox).scrollTop(9007199254740991)
     }else {// 接口调用出错
       alert('抱歉，出错了，请联系管理员：770383385@qq.com')
     }
