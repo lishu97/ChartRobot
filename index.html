@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <title>chatRobot</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <link rel="stylesheet" type="text/css" href="iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
   </head>
 
   <body>
@@ -24,13 +24,12 @@
         <li id = "sendBt" class="iconfont icon-send"></li>
       </ul>
     </footer>
-    
-    <script src="jQuery.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="robot.js" type="text/javascript" charset="utf-8"></script>
+    <script src="lib/jQuery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/robot.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/Controller.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-      var robot = new Robot()
-      robot.init()
+      var controller = new Controller()
+      controller.init()
     </script>
   </body>
-
 </html>
