@@ -18,7 +18,7 @@ class Robot {
     let data = {
       "showapi_res_code":0,
       "showapi_res_body":{
-        "text":"你好呀~",
+        "text":"你好，我是图灵机器人",
       }
     }
     this.showResponse(data)
