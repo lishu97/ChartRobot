@@ -1,4 +1,4 @@
-# 聊天机器人（ChartRobot）
+# 聊天机器人（ChatRobot）
 
 ### 介绍
 
